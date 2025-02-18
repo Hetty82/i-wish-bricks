@@ -1,2 +1,2 @@
 # I ❤️ bricks
-Simple brickswishlist app.
+Simple bricks wishlist app.
