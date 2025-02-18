@@ -1,2 +1,2 @@
-# i-wish-bricks
-Simple wishlist app
+# I ❤️ bricks
+Simple brickswishlist app.
