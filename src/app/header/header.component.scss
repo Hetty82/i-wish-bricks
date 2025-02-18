@@ -1,0 +1,14 @@
+@use "mixins" as mixins;
+
+header {
+  background-color: red;
+  color: blue;
+}
+
+.container {
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mixins.container();
+}
