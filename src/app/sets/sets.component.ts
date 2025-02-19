@@ -1,13 +1,14 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { sets } from '../../assets/data/sets';
 import { MatTableModule } from '@angular/material/table';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-sets',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CurrencyPipe, MatTableModule],
-  templateUrl: './sets.component.html',
+  selector: 'app-sets',
   styleUrl: './sets.component.scss',
+  templateUrl: './sets.component.html',
 })
 export class SetsComponent {
   // todo: add service to get sets

@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-drawer',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
-  templateUrl: './drawer.component.html',
+  selector: 'app-drawer',
   styleUrl: './drawer.component.scss',
+  templateUrl: './drawer.component.html',
 })
 export class DrawerComponent {}

@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DrawerComponent } from './drawer/drawer.component';
 import { HeaderComponent } from './header/header.component';
 
 @Component({
-  selector: 'app-root',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [RouterOutlet, DrawerComponent, HeaderComponent],
-  templateUrl: './app.component.html',
+  selector: 'app-root',
   styleUrl: './app.component.scss',
+  templateUrl: './app.component.html',
 })
 export class AppComponent {}
