@@ -1,1 +1,41 @@
-<p>drawer works!</p>
+<h1>Your wished bricks ❤️</h1>
+
+<table>
+  @for (set of sets(); track set.number) {
+    <tr>
+      <td>
+        <span class="number">{{ set.number }}</span>
+      </td>
+
+      <td>
+        <span class="name">{{ set.name }}</span>
+      </td>
+
+      <!-- todo: <td>
+        <span class="name">{{ set.amount }}</span>
+      </td> -->
+
+      <td>
+        <!-- todo: set.price * set.amount | currency: "EUR" -->
+        <span class="price">{{ set.price | currency: "EUR" }}</span>
+      </td>
+    </tr>
+  } @empty {
+    <tr>
+      <td>
+        You have no wishes. You are completely content. If not: go click some
+        hearts!
+      </td>
+    </tr>
+  }
+
+  <tr>
+    <td colspan="3">
+      <span class="label">Total:</span>
+    </td>
+
+    <td>
+      <span class="total">{{ 123456 | currency: "EUR" }} </span>
+    </td>
+  </tr>
+</table>

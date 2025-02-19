@@ -1,0 +1,10 @@
+@use "@angular/material" as mat;
+
+:host {
+  @include mat.sidenav-overrides(
+    (
+      container-shape: 0,
+      container-width: 300px,
+    )
+  );
+}

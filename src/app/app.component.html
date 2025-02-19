@@ -1,7 +1,13 @@
-<app-header></app-header>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <app-header (openWishList)="sidenav.toggle()"></app-header>
 
-<app-drawer></app-drawer>
+    <main class="main">
+      <router-outlet />
+    </main>
+  </mat-sidenav-content>
 
-<main class="main">
-  <router-outlet />
-</main>
+  <mat-sidenav #sidenav fixedInViewport>
+    <app-drawer (closed)="sidenav.close()"></app-drawer>
+  </mat-sidenav>
+</mat-sidenav-container>

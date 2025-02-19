@@ -4,56 +4,7 @@
   <!-- todo: replace with MatTable and add sort -->
   <table>
     @for (set of sets(); track set.number) {
-      <tr>
-        <td>
-          <figure>
-            <img
-              src="images/{{ set.number }}.jpg"
-              alt="Lego set {{ set.name }}"
-            />
-          </figure>
-        </td>
-
-        <td>
-          <span class="number">{{ set.number }}</span>
-        </td>
-
-        <td>
-          <span class="name">{{ set.name }}</span>
-        </td>
-
-        <td>
-          <span class="price">{{ set.price | currency: "EUR" }}</span>
-        </td>
-
-        <!-- <mat-icon
-          svgIcon="thumbs-up"
-          aria-hidden="false"
-          aria-label="Example thumbs up SVG icon"
-        ></mat-icon> -->
-
-        <td>
-          <div class="actions">
-            <div class="wish" [class.wished]="2 > 0">
-              <button mat-icon-button>
-                <mat-icon>favorite</mat-icon>
-              </button>
-            </div>
-
-            <footer>
-              <button mat-icon-button class="remove">
-                <mat-icon>remove</mat-icon>
-              </button>
-
-              <span class="count">2</span>
-
-              <button mat-icon-button class="add">
-                <mat-icon>add</mat-icon>
-              </button>
-            </footer>
-          </div>
-        </td>
-      </tr>
+      <app-set [set]="set"></app-set>
     } @empty {
       <tr>
         <td>Still loading the sets 🥱</td>

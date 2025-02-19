@@ -3,7 +3,11 @@
     <h1>{{ title }}</h1>
 
     <div class="actions">
-      <button mat-icon-button aria-label="Favorite button with heart icon">
+      <button
+        mat-icon-button
+        aria-label="Favorite button with heart icon"
+        (click)="openWishList.emit()"
+      >
         <mat-icon matBadge="12">favorite</mat-icon>
       </button>
     </div>
