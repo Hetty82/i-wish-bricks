@@ -1,7 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

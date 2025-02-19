@@ -1,3 +1,4 @@
+@use "@angular/material" as mat;
 @use "mixins" as mixins;
 
 .container {
@@ -6,6 +7,9 @@
 
 td {
   padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+  border-bottom: 1px solid currentColor;
 
   &:last-child {
     padding-right: 0;
@@ -18,5 +22,37 @@ figure {
 
   img {
     max-width: 100%;
+  }
+}
+
+.actions {
+  position: relative;
+
+  .wish {
+    width: 100px;
+    height: 100px;
+
+    button {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.wished {
+      @include mat.icon-button-overrides(
+        (
+          icon-color: red,
+        )
+      );
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

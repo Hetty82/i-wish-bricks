@@ -14,10 +14,11 @@ header {
   @include mixins.container();
 }
 
-:host {
+.actions {
   @include mat.icon-button-overrides(
     (
       icon-color: yellow,
+      // icon-size: 30px, -> does not work
     )
   );
 }

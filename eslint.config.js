@@ -31,6 +31,7 @@ module.exports = tseslint.config(
         },
       ],
       "@angular-eslint/prefer-on-push-component-change-detection": ["error"],
+      "sort-imports": ["error", { allowSeparatedGroups: true }],
     },
   },
   {
