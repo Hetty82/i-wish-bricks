@@ -1,4 +1,15 @@
-<h1>Your wished bricks ❤️</h1>
+<header>
+  <h1>Your wished bricks ❤️</h1>
+
+  <button
+    class="close"
+    mat-icon-button
+    (click)="closed.emit()"
+    aria-label="Close sidenav button with cross icon"
+  >
+    <mat-icon> close </mat-icon>
+  </button>
+</header>
 
 <table>
   @for (set of sets(); track set.number) {
