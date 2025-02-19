@@ -10,11 +10,11 @@ import { SetsStore } from '../services/sets.store';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CurrencyPipe],
-  selector: 'app-drawer',
-  styleUrl: './drawer.component.scss',
-  templateUrl: './drawer.component.html',
+  selector: 'app-wish-list',
+  styleUrl: './wish-list.component.scss',
+  templateUrl: './wish-list.component.html',
 })
-export class DrawerComponent {
+export class WishListComponent {
   closed = output<void>();
 
   #store = inject(SetsStore);
