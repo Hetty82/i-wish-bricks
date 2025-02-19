@@ -12,6 +12,10 @@ import { Set, SetVm, Wishes } from '../models';
 import { LocalStorageService } from './local-storage.service';
 import { SetsService } from './sets.service';
 
+// Note: I am a big fan of NgRx Store and the Redux pattern. But that would
+// have been real overkill here. This was an excellent opportunity to try out
+// the NgRx SignalStore and I think it fits very well.
+
 interface SetsState {
   sets: Set[];
   isLoading: boolean;
@@ -84,6 +88,7 @@ export const SetsStore = signalStore(
         if (store.hasLoaded() || store.isLoading()) {
           return;
         }
+
         const wishes =
           localStorageService.getItem<Wishes>(localStorageKey) || [];
 

@@ -2,6 +2,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { Routes } from '@angular/router';
 import { SetsComponent } from './sets/sets.component';
 
+// Normally I would load all routes lazily
 export const routes: Routes = [
   {
     path: 'sets',

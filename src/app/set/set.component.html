@@ -20,29 +20,37 @@
     <span class="price">{{ set().price | currency: "EUR" }}</span>
   </td>
 
-  <!-- <mat-icon
-    svgIcon="thumbs-up"
-    aria-hidden="false"
-    aria-label="Example thumbs up SVG icon"
-  ></mat-icon> -->
-  <!-- todo: add aria-hidden, aria-label -->
   <td>
     <div class="actions">
       <div class="wish" [class.wished]="2 > 0">
-        <button mat-icon-button (click)="addWish.emit()">
-          <mat-icon>favorite</mat-icon>
+        <button
+          mat-icon-button
+          (click)="addWish.emit()"
+          aria-label="Add one wish button with heart icon"
+        >
+          <mat-icon> favorite </mat-icon>
         </button>
       </div>
 
       <footer>
-        <button mat-icon-button class="remove" (click)="removeWish.emit()">
-          <mat-icon>remove</mat-icon>
+        <button
+          mat-icon-button
+          class="remove"
+          (click)="removeWish.emit()"
+          aria-label="Remove one wish button with minus icon"
+        >
+          <mat-icon> remove </mat-icon>
         </button>
 
         <span class="count">{{ set().wished }}</span>
 
-        <button mat-icon-button class="add" (click)="addWish.emit()">
-          <mat-icon>add</mat-icon>
+        <button
+          mat-icon-button
+          class="add"
+          (click)="addWish.emit()"
+          aria-label="Add one wish button with a plus icon"
+        >
+          <mat-icon> add </mat-icon>
         </button>
       </footer>
     </div>
