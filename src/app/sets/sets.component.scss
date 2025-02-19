@@ -1,0 +1,22 @@
+@use "mixins" as mixins;
+
+.container {
+  @include mixins.container;
+}
+
+td {
+  padding-right: 0.5em;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+figure {
+  width: 140px;
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+  }
+}

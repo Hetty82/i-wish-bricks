@@ -1,3 +1,4 @@
+@use "@angular/material" as mat;
 @use "mixins" as mixins;
 
 header {
@@ -11,4 +12,12 @@ header {
   justify-content: space-between;
   align-items: center;
   @include mixins.container();
+}
+
+:host {
+  @include mat.icon-button-overrides(
+    (
+      icon-color: yellow,
+    )
+  );
 }

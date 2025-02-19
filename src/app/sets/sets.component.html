@@ -1,0 +1,39 @@
+<section class="container">
+  <h1>Lego Sets</h1>
+
+  <!-- todo: replace with MatTable and add sort -->
+  <table>
+    @for (set of sets(); track set.number) {
+      <tr>
+        <td>
+          <figure>
+            <img
+              src="images/{{ set.number }}.jpg"
+              alt="Lego set {{ set.name }}"
+            />
+          </figure>
+        </td>
+
+        <td>
+          <span class="number">{{ set.number }}</span>
+        </td>
+
+        <td>
+          <span class="name">{{ set.name }}</span>
+        </td>
+
+        <td>
+          <span class="price">{{ set.price | currency: "EUR" }}</span>
+        </td>
+
+        <td>
+          <span class="wish">{{ set.price | currency: "EUR" }}</span>
+        </td>
+      </tr>
+    } @empty {
+      <tr>
+        <td>Still loading the sets 🥱</td>
+      </tr>
+    }
+  </table>
+</section>
