@@ -19,7 +19,7 @@ describe(NotFoundComponent.name, () => {
 
   // Loosely based on AAA pattern, mostly for readability,
   // and completely permitted to use multiple of each
-  it('should create', () => {
+  it('shows some destruction', () => {
     // Arrange
     const { fixture } = arrange();
 

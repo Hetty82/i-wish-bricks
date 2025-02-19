@@ -37,8 +37,11 @@ export const SetsStore = signalStore(
   withState(initialState),
   withComputed(({ sets, wishes }) => ({
     wishCount: computed(() => {
-      const count = Object.values(wishes()).reduce(
-        (total, wished) => total + wished,
+      const validWishes = Object.entries(wishes()).filter(([setNumber]) => {
+        return sets().some((set) => set.number === +setNumber);
+      });
+      const count = validWishes.reduce(
+        (total, [, wished]) => total + wished,
         0,
       );
       return count;
@@ -95,7 +98,7 @@ export const SetsStore = signalStore(
         patchState(store, { isLoading: true });
 
         const sets = await firstValueFrom(setsService.getSets());
-        patchState(store, { sets, isLoading: false, wishes });
+        patchState(store, { sets, isLoading: false, hasLoaded: true, wishes });
       },
     }),
   ),

@@ -9,11 +9,10 @@ import { SetsStore } from './services/sets.store';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { getChildComponent } from '../test/element.helpers';
 
-describe('AppComponent', () => {
+describe(AppComponent.name, () => {
   const arrange = () => {
     const setsStore = {
       loadSets: jasmine.createSpy('loadSets'),
-      // loadSets: jasmine.createSpy('loadSets').and.returnValue(EMPTY),
     };
 
     TestBed.configureTestingModule({
