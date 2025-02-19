@@ -5,10 +5,13 @@
     <div class="actions">
       <button
         mat-icon-button
+        aria-hidden="false"
         aria-label="Favorite button with heart icon"
         (click)="openWishList.emit()"
       >
-        <mat-icon matBadge="12">favorite</mat-icon>
+        <mat-icon [matBadge]="wishCount()" aria-hidden="false">
+          favorite
+        </mat-icon>
       </button>
     </div>
   </div>

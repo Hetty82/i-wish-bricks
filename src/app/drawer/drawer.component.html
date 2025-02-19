@@ -11,31 +11,36 @@
         <span class="name">{{ set.name }}</span>
       </td>
 
-      <!-- todo: <td>
-        <span class="name">{{ set.amount }}</span>
-      </td> -->
+      <td>
+        <span class="name">{{ set.wished }}</span>
+      </td>
 
       <td>
-        <!-- todo: set.price * set.amount | currency: "EUR" -->
-        <span class="price">{{ set.price | currency: "EUR" }}</span>
+        <span class="price">{{ set.wishPrice | currency: "EUR" }}</span>
       </td>
     </tr>
   } @empty {
     <tr>
-      <td>
-        You have no wishes. You are completely content. If not: go click some
-        hearts!
+      <td class="empty">
+        You have no wishes. You are completely happy. Totally content and zen.
+
+        <br />
+        <br />
+
+        I don't buy it. Just go! Go click some hearts!
       </td>
     </tr>
   }
 
-  <tr>
-    <td colspan="3">
-      <span class="label">Total:</span>
-    </td>
+  @if (sets().length) {
+    <tr>
+      <td colspan="3">
+        <span class="label">Total:</span>
+      </td>
 
-    <td>
-      <span class="total">{{ 123456 | currency: "EUR" }} </span>
-    </td>
-  </tr>
+      <td>
+        <span class="total">{{ total() | currency: "EUR" }} </span>
+      </td>
+    </tr>
+  }
 </table>

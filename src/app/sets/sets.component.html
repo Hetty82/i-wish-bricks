@@ -4,7 +4,11 @@
   <!-- todo: replace with MatTable and add sort -->
   <table>
     @for (set of sets(); track set.number) {
-      <app-set [set]="set"></app-set>
+      <app-set
+        [set]="set"
+        (addWish)="updateWish(set.number, 1)"
+        (removeWish)="updateWish(set.number, -1)"
+      ></app-set>
     } @empty {
       <tr>
         <td>Still loading the sets 🥱</td>

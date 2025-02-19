@@ -1,8 +1,13 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  output,
+} from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Set } from '../models';
+import { SetVm } from '../models';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,5 +17,8 @@ import { Set } from '../models';
   templateUrl: './set.component.html',
 })
 export class SetComponent {
-  set = input.required<Set>();
+  set = input.required<SetVm>();
+
+  addWish = output();
+  removeWish = output();
 }

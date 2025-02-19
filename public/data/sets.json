@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Viking Village",
+    "number": 21343,
+    "pieceCount": 2103,
+    "theme": "Ideas",
+    "price": 139.99
+  },
+  {
+    "name": "Sandcrawler",
+    "number": 75059,
+    "pieceCount": 3296,
+    "theme": "Star Wars",
+    "price": 299.99
+  },
+  {
+    "name": "Lion Knights’ Castle",
+    "number": 10305,
+    "pieceCount": 4514,
+    "theme": "Icons",
+    "price": 399.99
+  },
+  {
+    "name": "Black Seas Barracuda",
+    "number": 6285,
+    "pieceCount": 909,
+    "theme": "Pirates",
+    "price": 109.99
+  },
+  {
+    "name": "Winnie the Pooh",
+    "number": 21326,
+    "pieceCount": 1265,
+    "theme": "Disney",
+    "price": 99.99
+  },
+  {
+    "name": "Botanical Garden",
+    "number": 41757,
+    "pieceCount": 1072,
+    "theme": "Friends",
+    "price": 84.99
+  }
+]

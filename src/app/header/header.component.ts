@@ -1,7 +1,13 @@
-import { ChangeDetectionStrategy, Component, output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  output,
+} from '@angular/core';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { SetsStore } from '../services/sets.store';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -13,5 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
 export class HeaderComponent {
   openWishList = output<void>();
 
-  title = 'I ❤️ bricks';
+  #store = inject(SetsStore);
+
+  protected title = 'I ❤️ bricks';
+  protected wishCount = this.#store.wishCount;
 }

@@ -2,7 +2,7 @@
   <td>
     <figure>
       <img
-        src="images/{{ set().number }}.jpg"
+        src="images/{{ set().number }} Small.png"
         alt="Lego set {{ set().name }}"
       />
     </figure>
@@ -29,19 +29,19 @@
   <td>
     <div class="actions">
       <div class="wish" [class.wished]="2 > 0">
-        <button mat-icon-button>
+        <button mat-icon-button (click)="addWish.emit()">
           <mat-icon>favorite</mat-icon>
         </button>
       </div>
 
       <footer>
-        <button mat-icon-button class="remove">
+        <button mat-icon-button class="remove" (click)="removeWish.emit()">
           <mat-icon>remove</mat-icon>
         </button>
 
-        <span class="count">2</span>
+        <span class="count">{{ set().wished }}</span>
 
-        <button mat-icon-button class="add">
+        <button mat-icon-button class="add" (click)="addWish.emit()">
           <mat-icon>add</mat-icon>
         </button>
       </footer>

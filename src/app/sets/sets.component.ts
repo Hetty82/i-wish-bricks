@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SetComponent } from '../set/set.component';
-import { sets } from '../../assets/data/sets';
+import { SetsStore } from '../services/sets.store';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,8 +12,10 @@ import { sets } from '../../assets/data/sets';
   templateUrl: './sets.component.html',
 })
 export class SetsComponent {
-  // todo: add service to get sets
-  // todo: add service to get wishes
-  // todo: merge these to into view model
-  protected readonly sets = signal(sets);
+  #store = inject(SetsStore);
+  protected readonly sets = this.#store.setsVm;
+
+  protected updateWish(setNumber: number, add: 1 | -1) {
+    this.#store.updateWishes(setNumber, add);
+  }
 }

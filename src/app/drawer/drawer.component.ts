@@ -1,11 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  inject,
   output,
-  signal,
 } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
-import { sets } from '../../assets/data/sets';
+import { SetsStore } from '../services/sets.store';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,8 +17,7 @@ import { sets } from '../../assets/data/sets';
 export class DrawerComponent {
   closed = output<void>();
 
-  // todo: add service to get sets
-  // todo: add service to get wishes
-  // todo: merge these to into view model
-  protected readonly sets = signal(sets);
+  #store = inject(SetsStore);
+  protected readonly sets = this.#store.wishedSetsVm;
+  protected readonly total = this.#store.wishedTotal;
 }

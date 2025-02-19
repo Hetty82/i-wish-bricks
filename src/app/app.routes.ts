@@ -1,6 +1,6 @@
+import { NotFoundComponent } from './not-found/not-found.component';
 import { Routes } from '@angular/router';
 import { SetsComponent } from './sets/sets.component';
-import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   {

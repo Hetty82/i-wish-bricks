@@ -1,4 +1,1 @@
-export interface Wish {
-  setNumber: number;
-  amount: number;
-}
+export type Wishes = Record<number, number>;

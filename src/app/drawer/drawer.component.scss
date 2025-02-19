@@ -1,8 +1,31 @@
 :host {
-  display: contents;
-  font-size: 1rem;
+  display: block;
+  padding: 1em;
 }
 
 h1 {
   font-size: 1.2em;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 0.2em 0;
+
+  &:last-child {
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+  }
+
+  &.empty {
+    text-align: left;
+    padding: 1em 0;
+  }
+}
+
+tr:last-child td {
+  border-top: 1px solid currentColor;
 }
